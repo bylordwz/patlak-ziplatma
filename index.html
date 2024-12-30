@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patlak Zıplatma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+            font-family: 'Press Start 2P', cursive;
+            overflow: hidden;
+        }
+        canvas {
+            width: 100vw;
+            height: 100vh;
+        }
+        .instructions {
+            position: fixed;
+            bottom: 20px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 12px;
+            line-height: 1.5;
+            z-index: 100;
+            transition: opacity 0.5s ease;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="game"></canvas>
+    <div class="instructions" id="instructions">
+        Zıplamak için SPACE veya ↑ tuşuna basın<br>
+        Oyun bittiğinde SPACE tuşu ile yeniden başlatın
+    </div>
+    <script src="game.js"></script>
+    <script>
+        // Oyun başladığında talimatları gizle
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                document.getElementById('instructions').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
