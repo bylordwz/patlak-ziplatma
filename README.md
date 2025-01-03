@@ -26,4 +26,4 @@ A fun dinosaur jumping game inspired by Chrome's offline dinosaur game.
 
 ## Credits
 
-Created by Muhammed Yasin Akbulut
+Created by ByLordwz
